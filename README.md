@@ -1,9 +1,9 @@
 # depthai-unity-plugin
 
 ![Demo](img/depthai-unity-plugin-face-detector.gif)
-DepthAI Unity Plugin is native plugin designed to bring DepthAI cameras (OAK-1, OAK-D cameras) to Unity
+DepthAI Unity Plugin is native plugin designed to bring DepthAI cameras (OAK-1, OAK-D) to Unity
 
-OAK cameras are Edge AI cameras powered by Intel Myriad-X Inference processor, so cameras are able to inference deep learning models.
+OAK cameras are Edge AI devices powered by Intel Movidius Myriad-X Inference vision processing units, so cameras are able to do inference deep learning models without need a host.
 
 More info: https://www.luxonis.com
 
@@ -11,7 +11,7 @@ DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
 # Main Goals
 
-- Provide predefined pipelines (MobileNet, Face Detector, Pose, Face Mesh, Eye gaze, Hand Tracking, ....) very easy to use for Unity users (non-developers) p.eg: Face Detector prefab just drag and drop to your scene
+- Provide predefined pipelines (MobileNet, Face Detector, Pose, Face Mesh, Eye gaze, Hand Tracking, ....) very easy to use for Unity users (non-developers) p.eg: Face Detector prefab just drag and drop to your scene and be able to build more advanced applications like gesture control, motion capture, ...
 
 - Provide full "low" API to create gen2 pipelines inside Unity
 
@@ -21,11 +21,27 @@ DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
 ## Face Detector Example
 
-In new scene, just drag and drop the FaceDetector prefab
+In new scene, just drag and drop the FaceDetectorCanvas prefab
 
-You can check example scene: FaceDetector
+You can check example scene: FaceDetectorScene
+
+![Demo](img/depthai-unity-face-detector.gif)
 
 Example using face detector results to control airplane in demo scene from OverCloud asset/package (not included in this repo)
+
+## API
+
+- void InitFaceDetector(string nnPath): Initialize face detector pipeline with first available device using blob model located in nnPath (by default /Assets/Models)
+
+- void FinishFaceDetector(): Close the device. This is very important to avoid Unity hangout or crash next time you start the pipeline again. In the example is called with "Stop Face Detector" button is pressed or OnApplicationQuit.
+
+- void FaceDetectorPreview(IntPtr data, int width, int height): Get results from running pipeline and pass image preview in data parameter. Important because updates results
+
+- void FaceDetectorResultsMX(): Get center x-coordinate of face detection result with highest score
+
+- void FaceDetectorResultsMY(): Get center y-coordinate of face detection result with highest score
+
+Note: Coordinate system is (0,0) bottom left and (max,max) top right
 
 # Roadmap
 
