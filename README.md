@@ -6,6 +6,7 @@ DepthAI Unity Plugin is native plugin designed to bring DepthAI cameras (OAK-1, 
 OAK cameras are Edge AI devices powered by Intel Movidius Myriad-X Inference vision processing units, so cameras are able to do inference deep learning models without need a host.
 
 More info: https://www.luxonis.com
+(I'm not related to luxonis)
 
 DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
@@ -27,7 +28,16 @@ You can check example scene: FaceDetectorScene
 
 ![Demo](img/depthai-unity-face-detector.gif)
 
-Example using face detector results to control airplane in demo scene from OverCloud asset/package (not included in this repo)
+## OverCloud demo (airplane control)
+
+OverCloud (aka airplane demo) is paid asset from assetstore, so it's not included in this repo.
+(I'm not related to the creator of OverCloud asset)
+
+If you own OverCloud it's very easy to control the airplane of demo scene:
+
+- Add OverCloudFaceDetectorImage prefab inside the canvas of demo scene.
+
+That's all :) This will start automatically the face detector pipeline and has linked the mouseAim of the airplane to the x-axis center.
 
 ## API
 
