@@ -4,11 +4,14 @@
 DepthAI Unity Plugin is native plugin designed to bring DepthAI cameras (OAK-1, OAK-D) to Unity
 
 OAK cameras are Edge AI devices powered by Intel Movidius Myriad-X Inference vision processing units, so cameras are able to do inference deep learning models without need a host.
+It combines neural inference, depth vision, and feature tracking into an easy-to-use solution.
 
 More info: https://www.luxonis.com
 (I'm not related to luxonis)
 
 DepthAI Unity Plugin is based on C++ DepthAI-Core library
+
+**if you find this repo interesting please star and watch !**
 
 # Main Goals
 
@@ -20,7 +23,7 @@ DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
 # Usage
 
-## Face Detector Example
+# Face Detector Example
 
 In new scene, just drag and drop the FaceDetectorCanvas prefab
 
@@ -47,11 +50,43 @@ That's all :) This will start automatically the face detector pipeline and has l
 
 - void FaceDetectorPreview(IntPtr data, int width, int height): Get results from running pipeline and pass image preview in data parameter. Important because updates results
 
-- void FaceDetectorResultsMX(): Get center x-coordinate of face detection result with highest score
+- int FaceDetectorResultsMX(): Get center x-coordinate of face detection result with highest score
 
-- void FaceDetectorResultsMY(): Get center y-coordinate of face detection result with highest score
+- int FaceDetectorResultsMY(): Get center y-coordinate of face detection result with highest score
 
 Note: Coordinate system is (0,0) bottom left and (max,max) top right
+
+# Head Pose Example
+
+2-stage head pose pipeline: face detector + head pose
+
+In new scene, just drag and drop the HeadPoseCanvas prefab
+
+You can check example scene: HeadPoseScene
+
+![Demo](img/unity-plugin-head-pose.gif)
+
+Head update is filtered to avoid some small flickness. You can tweak this on the Update() method inside the DaiHeadPose.cs script
+
+Here example with no limitation:
+
+![Demo](img/head-pose-rt.gif)
+
+Note: Blocky guy is from Block People free demo so it's included in the repo but you can find also on the AssetStore
+
+## API
+
+- void InitHeadPose(string nnPath,string nnPath2): Initialize head pose pipeline with first available device using the 2 blob models located in nnPath/nnPath2 (by default /Assets/Models)
+
+- void FinishHeadPose(): Close the device. This is very important to avoid Unity hangout or crash next time you start the pipeline again. In the example is called with "Stop Head Pose" button is pressed or OnApplicationQuit.
+
+- void HeadPosePreview(IntPtr data, int width, int height): Get results from running pipeline and pass image preview in data parameter. Important because updates results
+
+- float HeadPoseYaw(): Get yaw from head pose estimation
+
+- float HeadPoseRoll(): Get roll from head pose estimation
+
+- float HeadPosePitch(): Get pitch from head pose estimation
 
 # Roadmap
 
@@ -66,7 +101,7 @@ Note: Coordinate system is (0,0) bottom left and (max,max) top right
   - Face animation and lip sync using face mesh
   - Parallax camera movement using face pose
 
-Please star / watch this repo and stay tunned !
+**Please star / watch this repo and stay tunned !**
 
 # Requirements
 
