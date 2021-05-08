@@ -1,6 +1,12 @@
 # depthai-unity-plugin
 
 ![Demo](img/depthai-unity-plugin-face-detector.gif)
+Face detector example
+
+![Demo](img/head-pose-rt.gif)
+
+Head pose example
+
 DepthAI Unity Plugin is native plugin designed to bring DepthAI cameras (OAK-1, OAK-D) to Unity
 
 OAK cameras are Edge AI devices powered by Intel Movidius Myriad-X Inference vision processing units, so cameras are able to do inference deep learning models without need a host.
@@ -59,6 +65,7 @@ Note: Coordinate system is (0,0) bottom left and (max,max) top right
 # Head Pose Example
 
 2-stage head pose pipeline: face detector + head pose
+![Demo](img/head-pose-pipeline.gif)
 
 In new scene, just drag and drop the HeadPoseCanvas prefab
 
