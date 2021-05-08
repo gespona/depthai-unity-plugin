@@ -80,7 +80,7 @@ Here example with no limitation:
 
 ![Demo](img/head-pose-rt.gif)
 
-Note: Blocky guy is from Block People free demo so it's included in the repo but you can find also on the AssetStore
+Note: Blocky guy is from Block People free demo asset so it's included in the repo but you can find it also on the Unity AssetStore
 
 ## API
 
