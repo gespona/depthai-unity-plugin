@@ -65,6 +65,7 @@ Note: Coordinate system is (0,0) bottom left and (max,max) top right
 # Head Pose Example
 
 2-stage head pose pipeline: face detector + head pose
+
 ![Demo](img/head-pose-pipeline.gif)
 
 In new scene, just drag and drop the HeadPoseCanvas prefab
