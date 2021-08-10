@@ -7,7 +7,8 @@ Face detector example
 
 Head pose example
 
-DepthAI Unity Plugin is native plugin designed to bring DepthAI cameras (OAK-1, OAK-D) to Unity
+# OAK for Unity - Coming soon to Unity AssetStore !
+DepthAI Unity Plugin (**OAK for Unity**) is native plugin designed to bring Edge AI to Unity thanks to DepthAI cameras (OAK-1, OAK-D)
 
 OAK cameras are Edge AI devices powered by Intel Movidius Myriad-X Inference vision processing units, so cameras are able to do inference deep learning models without need a host.
 It combines neural inference, depth vision, and feature tracking into an easy-to-use solution.
@@ -21,11 +22,11 @@ DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
 # Main Goals
 
-- Provide predefined pipelines (MobileNet, Face Detector, Pose, Face Mesh, Eye gaze, Hand Tracking, ....) very easy to use for Unity users (non-developers) p.eg: Face Detector prefab just drag and drop to your scene and be able to build more advanced applications like gesture control, motion capture, ...
+- Provide high-level API with predefined pipelines (MobileNet, Face Detector, Pose, Face Mesh, Eye gaze, Hand Tracking, ....) very easy to use for Unity users (usually non-developers) p.eg: Face Detector prefab just drag and drop to your scene and be able to build more advanced applications like gesture control, motion capture, ...
 
 - Provide full "low" API to create gen2 pipelines inside Unity
 
-- Provide virtual OAK cameras to use inside Unity (p.eg: syntetic dataset creaation)
+- Provide virtual OAK cameras to use inside Unity for other type of applications (p.eg: syntetic dataset creaation)
 
 # Usage
 
