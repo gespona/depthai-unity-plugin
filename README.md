@@ -114,12 +114,21 @@ Note: Blocky guy is from Block People free demo asset so it's included in the re
 
 # Requirements
 
-Tested on
+Requires OpenCV 3.0 installed
 
+Tested on
 Unity 2020.1.7f (macOS Catalina 10.15.4)
+
 More coming soon !
 
 All render pipelines supported :)
+
+# Known issues
+
+Sometimes when you open the project Unity gives this error:
+"Failed to load window layout"
+
+To fix this issue just copy "CurrentLayout-default.dwlt" file you can find in the root folder of this repo to "Library" folder and replace the old file.
 
 # Preview Version
 
