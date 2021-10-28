@@ -20,6 +20,13 @@ DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
 **if you find this repo interesting please star and watch !**
 
+# Recent Changes
+
+## 2021-10-28
+
+- Adding prebuilt binary of overcloud facetrack demo for Windows
+- Adding support for Windows
+
 # Main Goals
 
 - Provide high-level API with predefined pipelines (MobileNet, Face Detector, Pose, Face Mesh, Eye gaze, Hand Tracking, ....) very easy to use for Unity users (usually non-developers) p.eg: Face Detector prefab just drag and drop to your scene and be able to build more advanced applications like gesture control, motion capture, ...
@@ -117,8 +124,10 @@ Note: Blocky guy is from Block People free demo asset so it's included in the re
 Requires OpenCV 3.0 installed
 
 Tested on
-Unity 2020.1.7f (macOS Catalina 10.15.4)
-Unity 2020.1.7f (Windows 10)
+
+- Unity 2020.1.7f (macOS Catalina 10.15.4)
+
+- Unity 2020.1.7f (Windows 10)
 
 More coming soon !
 
