@@ -118,6 +118,7 @@ Requires OpenCV 3.0 installed
 
 Tested on
 Unity 2020.1.7f (macOS Catalina 10.15.4)
+Unity 2020.1.7f (Windows 10)
 
 More coming soon !
 
@@ -125,10 +126,18 @@ All render pipelines supported :)
 
 # Known issues
 
+## [Any Platform - Unity] Failed to load window layout
 Sometimes when you open the project Unity gives this error:
 "Failed to load window layout"
 
 To fix this issue just copy "CurrentLayout-default.dwlt" file you can find in the root folder of this repo to "Library" folder and replace the old file.
+
+## [MacOS] Issues opening depthai-core lib because it's not verified
+As it's early version modified depthai-core lib is not signed/verified. So as usual with Mac when you download something directly from internet is blocking the file by default. You need to go with finder to folder Assets/Plugins/macOS, do right-click on libdepthai-core, click "Open" and confirm again with "Open". From here file is ok so Unity editor can access to the library.
+
+## [MacOS] DllNotFoundException: libdepthai-core
+If after previous step, Unity editor is still complaining about issues with libdepthai-core is very likely because can't load the library file due dependencies failing. See above it requires OpenCV 3.0 installed on the machine. To confirm the issue is because missing OpenCV 3.0 installation, inside Unity editor go to project window, Assets/Plugins/macOS and click on libdepthai-core. In the inspector window, click on "Load on startup" and press apply button. If you don't have OpenCV 3.0 installed you will get a message in the console window similar to "library not loaded: /usr/local/opt/opencv@3/lib/libxxxxx"
+
 
 # Preview Version
 

@@ -9,20 +9,29 @@ public class OverCloudDaiFaceDetector : MonoBehaviour
 {
     //Lets make our calls from the Plugin
 
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern bool InitFaceDetector(string nnPath);
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern bool FaceDetectorPreview(IntPtr data, int width, int height);
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern int FaceDetectorResultsMX();
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern int FaceDetectorResultsMY();
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern bool FinishFaceDetector();
+    #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool InitFaceDetector(string nnPath);
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool FaceDetectorPreview(IntPtr data, int width, int height);
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern int FaceDetectorResultsMX();
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern int FaceDetectorResultsMY();
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool FinishFaceDetector();
+    #else
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool InitFaceDetector(string nnPath);
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool FaceDetectorPreview(IntPtr data, int width, int height);
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern int FaceDetectorResultsMX();
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern int FaceDetectorResultsMY();
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool FinishFaceDetector();
+    #endif
 
 
     public Image cameraImage;

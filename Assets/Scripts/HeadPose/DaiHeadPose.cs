@@ -9,23 +9,33 @@ public class DaiHeadPose : MonoBehaviour
 {
     //Lets make our calls from the Plugin
 
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern bool InitHeadPose(string nnPath,string nnPath2);
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern bool HeadPosePreview(IntPtr data, int width, int height);
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern float HeadPoseYaw();
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern float HeadPoseRoll();
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern float HeadPosePitch();
-
-    [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
-    private static extern bool FinishHeadPose();
+    #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool InitHeadPose(string nnPath,string nnPath2);
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool HeadPosePreview(IntPtr data, int width, int height);
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern float HeadPoseYaw();
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern float HeadPoseRoll();
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern float HeadPosePitch();
+        [DllImport("depthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool FinishHeadPose();
+    #else
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool InitHeadPose(string nnPath,string nnPath2);
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool HeadPosePreview(IntPtr data, int width, int height);
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern float HeadPoseYaw();
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern float HeadPoseRoll();
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern float HeadPosePitch();
+        [DllImport("libdepthai-core", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool FinishHeadPose();        
+    #endif
 
 
     public Image cameraImage;
