@@ -5,6 +5,10 @@ Face detector example
 
 ![Demo](img/head-pose-rt.gif)
 
+---
+# **IMPORTANT NEWS !!!**
+# **This repository was moved to [https://github.com/luxonis/depthai-unity](https://github.com/luxonis/depthai-unity) in favour of the Official Luxonis|OAK Unity Plugin. Please follow/star the new repository to get latest development and releases**
+
 Head pose example
 
 # OAK for Unity - Coming soon to Unity AssetStore !
@@ -14,7 +18,6 @@ OAK cameras are Edge AI devices powered by Intel Movidius Myriad-X Inference vis
 It combines neural inference, depth vision, and feature tracking into an easy-to-use solution.
 
 More info: https://www.luxonis.com
-(I'm not related to luxonis)
 
 DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
