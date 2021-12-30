@@ -1,13 +1,12 @@
 # depthai-unity-plugin
+# **IMPORTANT NEWS !!!**
+# **This repository was moved to [https://github.com/luxonis/depthai-unity](https://github.com/luxonis/depthai-unity) in favour of the Official Luxonis|OAK Unity Plugin. Please follow/star the new repository to get latest development and releases**
 
 ![Demo](img/depthai-unity-plugin-face-detector.gif)
 Face detector example
 
 ![Demo](img/head-pose-rt.gif)
 
----
-# **IMPORTANT NEWS !!!**
-# **This repository was moved to [https://github.com/luxonis/depthai-unity](https://github.com/luxonis/depthai-unity) in favour of the Official Luxonis|OAK Unity Plugin. Please follow/star the new repository to get latest development and releases**
 
 Head pose example
 
