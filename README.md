@@ -24,6 +24,9 @@ DepthAI Unity Plugin is based on C++ DepthAI-Core library
 
 # Recent Changes
 
+## 2022-02-11
+- Added support for OAK-D lite on Windows (dlls)
+
 ## 2021-10-28
 
 - Adding prebuilt binary of overcloud facetrack demo for Windows. **Note: Be sure your oak device is connected and available as demo starts pipeline automatically.**
